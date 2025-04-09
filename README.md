@@ -69,6 +69,7 @@ client = Ark(
 1、将uvc摄像模组插入到另一块esp32s3开发板
 
 2、烧录uvc-camera程序，进入monitor查看摄像头ip
+![image](https://github.com/user-attachments/assets/383d2c42-539c-445b-8c7d-60cd88f49f26)
 
 3、手机打开wifi搜索到这个板子开放的热点，连接之后，进入该ip地址即可查看画面
 ![image](https://github.com/user-attachments/assets/ae1997ce-ef8e-45ca-a7a2-c2834becc990)
