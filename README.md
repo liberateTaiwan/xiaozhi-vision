@@ -9,6 +9,7 @@
 1、cd 你本地小智代码的根目录
 2、idf.py menuconfig
 ![image](https://github.com/user-attachments/assets/b84d3bf5-67f5-4261-a963-483dfcc1f726)
+
 3、设置为WS协议，并修改后端地址为你自己的后端代码开放的ip和端口
 4、idf.py set-target esp32s3
 5、idf.py build flash monitor
