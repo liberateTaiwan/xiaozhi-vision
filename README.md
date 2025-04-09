@@ -5,7 +5,7 @@
 2张Esp32s3开发板，1个uvc协议摄像模组，杜邦线若干
 
 ## 程序
-# 小智烧录的程序（可直接去虾哥项目拉取[1](https://github.com/78/xiaozhi-esp32)）
+# 小智烧录的程序（可直接去[虾哥项目](https://github.com/78/xiaozhi-esp32)）
 1、cd 你本地小智代码的根目录
 
 2、idf.py menuconfig
@@ -18,7 +18,7 @@
 
 5、idf.py build flash monitor
 
-# 后端服务的程序（可直接去[2](https://github.com/xinnan-tech/xiaozhi-esp32-server)）
+# 后端服务的程序（可直接去[大佬开源的后端服务](https://github.com/xinnan-tech/xiaozhi-esp32-server)）
 1、先跑通该后端服务，出现ip和端口即可进行下一步
 
 2、去火山引擎申请一个视觉大模型的key
@@ -29,7 +29,7 @@
 
 5、监测到关键词，调用视觉模型功能
 
-# uvc-camera程序（可直接去[3](https://github.com/espressif/esp-iot-solution/tree/d09966201afeab0135aa741e8ad6ed5a1ed09b6a/examples/usb/host/usb_camera_mic_spk)）
+# uvc-camera程序（可直接去[乐鑫官方的示例例程代码](https://github.com/espressif/esp-iot-solution/tree/d09966201afeab0135aa741e8ad6ed5a1ed09b6a/examples/usb/host/usb_camera_mic_spk)）
 1、将uvc摄像模组插入到另一块esp32s3开发板
 
 2、烧录uvc-camera程序，进入monitor查看摄像头ip
