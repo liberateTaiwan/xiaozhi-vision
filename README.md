@@ -14,7 +14,7 @@
 
 3、设置为WS协议，并修改后端地址为你自己的后端代码开放的ip和端口
 
-![a7afcd6008795552e9755122b8865b0c](https://github.com/user-attachments/assets/47da60e3-ec17-4004-9f28-f0a7f8bfd0a3)
+![ca99f74335c97653d33a5c66453b4419](https://github.com/user-attachments/assets/ca40b24a-3f7e-4b44-abf1-e5c1e312082a)
 
 4、idf.py set-target esp32s3
 
