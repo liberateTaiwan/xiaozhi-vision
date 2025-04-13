@@ -20,7 +20,7 @@
 
 5、idf.py build flash monitor
 
-# 后端服务的程序（可直接去[大佬开源的后端服务](https://github.com/xinnan-tech/xiaozhi-esp32-server)）
+# 后端服务的程序（可直接去[开源的后端服务](https://github.com/xinnan-tech/xiaozhi-esp32-server)）
 1、先跑通该后端服务，出现ip和端口即可进行下一步
 ![dcbf56e19b566e3480fec4872dada9ad](https://github.com/user-attachments/assets/d46e51ea-8f84-4763-a003-b1750a2915dc)
 
