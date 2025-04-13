@@ -1,0 +1,10 @@
+CMake Error at C:/Espressif/frameworks/esp-idf-v5.3.2/tools/cmake/build.cmake:268 (message):
+  Failed to resolve component 'esp_camera'.
+Call Stack (most recent call first):
+  C:/Espressif/frameworks/esp-idf-v5.3.2/tools/cmake/build.cmake:304 (__build_resolve_and_add_req)
+  C:/Espressif/frameworks/esp-idf-v5.3.2/tools/cmake/build.cmake:607 (__build_expand_requirements)
+  C:/Espressif/frameworks/esp-idf-v5.3.2/tools/cmake/project.cmake:710 (idf_build_process)
+  CMakeLists.txt:6 (project)
+
+
+ninja: error: rebuilding 'build.ninja': subcommand failed

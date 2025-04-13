@@ -1,0 +1,63 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM15 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM15 2000000[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x4207cb94: _GLOBAL__sub_I__ZN17__eh_globals_init7_S_initE at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp-elf/src/gcc/libstdc++-v3/libsupc++/eh_globals.cc:162
+[0m
+[0;33m--- 0x40375624: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/port/cpu_start.c:190
+[0m
+[0;33m--- 0x42002cf4: __esp_system_init_fn_init_efuse_check at C:/Espressif/frameworks/esp-idf-v5.3.2/components/efuse/src/esp_efuse_startup.c:31
+[0m
+[0;33m--- 0x4200319c: __esp_system_init_fn_init_show_cpu_freq at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/startup_funcs.c:58
+[0m
+[0;33m--- 0x42002c24: __esp_system_init_fn_init_show_app_info at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_app_format/esp_app_desc.c:106
+[0m
+[0;33m--- 0x42002d08: __esp_system_init_fn_init_efuse_show_app_info at C:/Espressif/frameworks/esp-idf-v5.3.2/components/efuse/src/esp_efuse_startup.c:41
+[0m
+[0;33m--- 0x42004e3c: __esp_system_init_fn_init_heap at C:/Espressif/frameworks/esp-idf-v5.3.2/components/heap/heap_caps_init.c:25
+[0m
+[0;33m--- 0x40374000: _WindowOverflow4 at C:/Espressif/frameworks/esp-idf-v5.3.2/components/xtensa/xtensa_vectors.S:2027
+[0m
+[0;33m--- 0x42008598: __esp_system_init_fn_esp_timer_init_nonos at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_timer/src/esp_timer_init.c:28
+[0m
+[0;33m--- 0x42007f34: __esp_system_init_fn_init_newlib at C:/Espressif/frameworks/esp-idf-v5.3.2/components/newlib/newlib_init.c:162
+[0m
+[0;33m--- 0x420031e8: __esp_system_init_fn_init_brownout at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/startup_funcs.c:67
+[0m
+[0;33m--- 0x420031f4: __esp_system_init_fn_init_newlib_time at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/startup_funcs.c:81
+[0m
+[0;33m--- 0x420096e4: __esp_system_init_fn_init_vfs_uart at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_driver_uart/src/uart_vfs.c:1080
+[0m
+[0;33m--- 0x4200a438: __esp_system_init_fn_init_vfs_usj_sec at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_vfs.c:405
+[0m
+[0;33m--- 0x4200a668: __esp_system_init_fn_init_vfs_console at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_vfs_console/vfs_console.c:222
+[0m
+[0;33m--- 0x42007fb0: __esp_system_init_fn_init_newlib_stdio at C:/Espressif/frameworks/esp-idf-v5.3.2/components/newlib/newlib_init.c:207
+[0m
+[0;33m--- 0x42008388: __esp_system_init_fn_init_pthread at C:/Espressif/frameworks/esp-idf-v5.3.2/components/pthread/pthread.c:76
+[0m
+[0;33m--- 0x42003200: __esp_system_init_fn_init_flash at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/startup_funcs.c:88
+[0m
+[0;33m--- 0x42002da4: __esp_system_init_fn_init_efuse at C:/Espressif/frameworks/esp-idf-v5.3.2/components/efuse/src/esp_efuse_startup.c:137
+[0m
+[0;33m--- 0x4207cb94: _GLOBAL__sub_I__ZN17__eh_globals_init7_S_initE at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp-elf/src/gcc/libstdc++-v3/libsupc++/eh_globals.cc:162
+[0m
+[0;33m--- 0x42021838: s_set_default_wifi_log_level at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_wifi/src/wifi_init.c:93
+[0m
+[0;33m--- 0x4037d1c4: enable_timer_group0_for_calibration at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_hw_support/port/esp32s3/rtc_time.c:199
+[0m
+[0;33m--- 0x420045d4: esp_ipc_init at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/esp_ipc.c:113
+[0m
+[0;33m--- 0x4200379c: esp_reset_reason_init at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/port/soc/esp32s3/reset_reason.c:63
+[0m
+[0;33m--- 0x420558a0: __esp_system_init_fn_esp_timer_init_os at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_timer/src/esp_timer.c:587
+[0m
+[0;33m--- 0x42005ef0: __esp_system_init_fn_esp_sleep_startup_init at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_hw_support/sleep_gpio.c:191
+[0m
+[0;33m--- 0x42003228: __esp_system_init_fn_init_apb_dma at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/startup_funcs.c:125
+[0m
+[0;33m--- 0x4200a048: __esp_system_init_fn_usb_serial_jtag_conn_status_init at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_connection_monitor.c:75
+[0m
+[0;33m--- 0x42003234: __esp_system_init_fn_init_disable_rtc_wdt at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/startup_funcs.c:143
+[0m
+[0m

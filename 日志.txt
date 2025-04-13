@@ -1,0 +1,585 @@
+Leaving...
+Hard resetting via RTS pin...
+Executing action: monitor
+Running idf_monitor in directory C:\Users\DELL\Desktop\esp-iot-solution-master\examples\usb\host\usb_camera_mic_spk
+Executing "C:\Espressif\python_env\idf5.3_py3.11_env\Scripts\python.exe C:\Espressif\frameworks\esp-idf-v5.3.2\tools/idf_monitor.py -p COM15 -b 2000000 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\DELL\Desktop\esp-iot-solution-master\examples\usb\host\usb_camera_mic_spk\build\usb_camera_mic_spk.elf --force-color -m 'C:\Espressif\python_env\idf5.3_py3.11_env\Scripts\python.exe' 'C:\Espressif\frameworks\esp-idf-v5.3.2\tools\idf.py'"...
+--- Warning: GDB cannot open serial ports accessed as COMx
+--- Using \\.\COM15 instead...
+--- esp-idf-monitor 1.5.0 on \\.\COM15 2000000
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+nit function: 0x4207cb94
+--- 0x4207cb94: _GLOBAL__sub_I__ZN17__eh_globals_init7_S_initE at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp-elf/src/gcc/libstdc++-v3/libsupc++/eh_globals.cc:162
+
+I (27) boot: ESP-IDF v5.3.2-dirty 2nd stage bootloader
+I (27) boot: compile time Apr  1 2025 21:43:26
+I (27) boot: Multicore bootloader
+I (27) boot: chip revision: v0.2
+I (27) boot: efuse block revision: v1.3
+I (27) boot.esp32s3: Boot SPI Speed : 80MHz
+I (28) boot.esp32s3: SPI Mode       : DIO
+I (28) boot.esp32s3: SPI Flash Size : 2MB
+I (28) boot: Enabling RNG early entropy source...
+I (29) boot: Partition Table:
+I (29) boot: ## Label            Usage          Type ST Offset   Length
+I (29) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (30) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (30) boot:  2 factory          factory app      00 00 00010000 001f0000
+I (30) boot: End of partition table
+I (31) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=48fd0h (298960) map
+I (84) esp_image: segment 1: paddr=00058ff8 vaddr=3fc9bc00 size=04dcch ( 19916) load
+I (88) esp_image: segment 2: paddr=0005ddcc vaddr=40374000 size=0224ch (  8780) load
+I (91) esp_image: segment 3: paddr=00060020 vaddr=42000020 size=9aad4h (633556) map
+I (203) esp_image: segment 4: paddr=000faafc vaddr=4037624c size=15904h ( 88324) load
+I (232) boot: Loaded app from partition at offset 0x10000
+I (232) boot: Disabling RNG early entropy source...
+V (233) mmap: after coalescing, 1 regions are left
+I (233) cpu_start: Multicore app
+D (233) cpu_start: Pro cpu up
+D (233) cpu_start: Starting app cpu, entry point is 0x40375624
+--- 0x40375624: call_start_cpu1 at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/port/cpu_start.c:190
+
+D (0) cpu_start: App cpu up
+V CACHE_ERR: illegal error intr clr & ena mask is: 0x3f
+V CACHE_ERR: core 1 access error intr clr & ena mask is: 0x1f
+D (242) clk: RTC_SLOW_CLK calibration value: 3746662
+V CACHE_ERR: illegal error intr clr & ena mask is: 0x3f
+V CACHE_ERR: core 0 access error intr clr & ena mask is: 0x1f
+D (243) cpu_start: calling init function: 0x42002cf4 on core: 0
+--- 0x42002cf4: __esp_system_init_fn_init_efuse_check at C:/Espressif/frameworks/esp-idf-v5.3.2/components/efuse/src/esp_efuse_startup.c:31
+
+D (243) cpu_start: calling init function: 0x4200319c on core: 0
+--- 0x4200319c: __esp_system_init_fn_init_show_cpu_freq at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/startup_funcs.c:58
+
+I (243) cpu_start: Pro cpu start user code
+I (243) cpu_start: cpu freq: 240000000 Hz
+D (244) cpu_start: calling init function: 0x42002c24 on core: 0
+--- 0x42002c24: __esp_system_init_fn_init_show_app_info at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_app_format/esp_app_desc.c:106
+
+I (244) app_init: Application information:
+I (244) app_init: Project name:     usb_camera_mic_spk
+I (245) app_init: App version:      1
+I (245) app_init: Compile time:     Apr  1 2025 21:43:03
+I (245) app_init: ELF file SHA256:  f4bdd483e...
+I (245) app_init: ESP-IDF:          v5.3.2-dirty
+D (246) cpu_start: calling init function: 0x42002d08 on core: 0
+--- 0x42002d08: __esp_system_init_fn_init_efuse_show_app_info at C:/Espressif/frameworks/esp-idf-v5.3.2/components/efuse/src/esp_efuse_startup.c:41
+
+I (246) efuse_init: Min chip rev:     v0.0
+I (246) efuse_init: Max chip rev:     v0.99
+I (247) efuse_init: Chip rev:         v0.2
+D (247) cpu_start: calling init function: 0x42004e3c on core: 0
+--- 0x42004e3c: __esp_system_init_fn_init_heap at C:/Espressif/frameworks/esp-idf-v5.3.2/components/heap/heap_caps_init.c:25
+
+V (247) memory_layout: reserved range is 0x3c0e8f20 - 0x3c0e8f48
+D (248) memory_layout: Checking 6 reserved memory ranges:
+D (248) memory_layout: Reserved memory range 0x3fc84000 - 0x3fc9bc00
+D (248) memory_layout: Reserved memory range 0x3fc9bc00 - 0x3fca4760
+D (249) memory_layout: Reserved memory range 0x3fceee34 - 0x3fcf0000
+D (249) memory_layout: Reserved memory range 0x40374000 - 0x4038bc00
+--- 0x40374000: _WindowOverflow4 at C:/Espressif/frameworks/esp-idf-v5.3.2/components/xtensa/xtensa_vectors.S:2027
+
+D (249) memory_layout: Reserved memory range 0x600fe000 - 0x600fe100
+D (250) memory_layout: Reserved memory range 0x600fffe8 - 0x60100000
+D (250) memory_layout: Building list of available memory regions:
+V (251) memory_layout: Examining memory region 0x3fc88000 - 0x3fc90000
+V (251) memory_layout: Region 0x3fc88000 - 0x3fc90000 inside of reserved 0x3fc84000 - 0x3fc9bc00
+V (251) memory_layout: Examining memory region 0x3fc90000 - 0x3fca0000
+V (252) memory_layout: Start of region 0x3fc90000 - 0x3fca0000 overlaps reserved 0x3fc84000 - 0x3fc9bc00
+V (252) memory_layout: Region 0x3fc9bc00 - 0x3fca0000 inside of reserved 0x3fc9bc00 - 0x3fca4760
+V (253) memory_layout: Examining memory region 0x3fca0000 - 0x3fcb0000
+V (253) memory_layout: Start of region 0x3fca0000 - 0x3fcb0000 overlaps reserved 0x3fc9bc00 - 0x3fca4760
+D (254) memory_layout: Available memory region 0x3fca4760 - 0x3fcb0000
+V (254) memory_layout: Examining memory region 0x3fcb0000 - 0x3fcc0000
+D (255) memory_layout: Available memory region 0x3fcb0000 - 0x3fcc0000
+V (255) memory_layout: Examining memory region 0x3fcc0000 - 0x3fcd0000
+D (255) memory_layout: Available memory region 0x3fcc0000 - 0x3fcd0000
+V (256) memory_layout: Examining memory region 0x3fcd0000 - 0x3fce0000
+D (256) memory_layout: Available memory region 0x3fcd0000 - 0x3fce0000
+V (256) memory_layout: Examining memory region 0x3fce0000 - 0x3fce9710
+D (257) memory_layout: Available memory region 0x3fce0000 - 0x3fce9710
+V (257) memory_layout: Examining memory region 0x3fce9710 - 0x3fcf0000
+V (258) memory_layout: End of region 0x3fce9710 - 0x3fcf0000 overlaps reserved 0x3fceee34 - 0x3fcf0000
+D (258) memory_layout: Available memory region 0x3fce9710 - 0x3fceee34
+V (258) memory_layout: Examining memory region 0x3fcf0000 - 0x3fcf8000
+D (259) memory_layout: Available memory region 0x3fcf0000 - 0x3fcf8000
+V (259) memory_layout: Examining memory region 0x600fe000 - 0x60100000
+V (260) memory_layout: Start of region 0x600fe000 - 0x60100000 overlaps reserved 0x600fe000 - 0x600fe100
+V (260) memory_layout: End of region 0x600fe100 - 0x60100000 overlaps reserved 0x600fffe8 - 0x60100000
+D (261) memory_layout: Available memory region 0x600fe100 - 0x600fffe8
+I (261) heap_init: Initializing. RAM available for dynamic allocation:
+D (262) heap_init: New heap initialised at 0x3fca4760
+I (262) heap_init: At 3FCA4760 len 00044FB0 (275 KiB): RAM
+I (262) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM
+D (263) heap_init: New heap initialised at 0x3fcf0000
+I (263) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM
+D (263) heap_init: New heap initialised at 0x600fe100
+I (263) heap_init: At 600FE100 len 00001EE8 (7 KiB): RTCRAM
+D (264) cpu_start: calling init function: 0x42008598 on core: 0
+--- 0x42008598: __esp_system_init_fn_esp_timer_init_nonos at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_timer/src/esp_timer_init.c:28
+
+D (264) cpu_start: calling init function: 0x42007f34 on core: 0
+--- 0x42007f34: __esp_system_init_fn_init_newlib at C:/Espressif/frameworks/esp-idf-v5.3.2/components/newlib/newlib_init.c:162
+
+D (265) cpu_start: calling init function: 0x420031e8 on core: 0
+--- 0x420031e8: __esp_system_init_fn_init_brownout at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/startup_funcs.c:67
+
+V (265) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): checking args
+V (265) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): Args okay. Resulting flags 0x40E
+D (266) intr_alloc: Connected src 39 to int 1 (cpu 0)
+D (266) cpu_start: calling init function: 0x420031f4 on core: 0
+--- 0x420031f4: __esp_system_init_fn_init_newlib_time at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/startup_funcs.c:81
+
+D (266) cpu_start: calling init function: 0x420096e4 on core: 0
+--- 0x420096e4: __esp_system_init_fn_init_vfs_uart at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_driver_uart/src/uart_vfs.c:1080
+
+D (267) cpu_start: calling init function: 0x4200a438 on core: 0
+--- 0x4200a438: __esp_system_init_fn_init_vfs_usj_sec at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_vfs.c:405
+
+D (267) cpu_start: calling init function: 0x4200a668 on core: 0
+--- 0x4200a668: __esp_system_init_fn_init_vfs_console at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_vfs_console/vfs_console.c:222
+
+D (267) cpu_start: calling init function: 0x42007fb0 on core: 0
+--- 0x42007fb0: __esp_system_init_fn_init_newlib_stdio at C:/Espressif/frameworks/esp-idf-v5.3.2/components/newlib/newlib_init.c:207
+
+D (268) cpu_start: calling init function: 0x42008388 on core: 0
+--- 0x42008388: __esp_system_init_fn_init_pthread at C:/Espressif/frameworks/esp-idf-v5.3.2/components/pthread/pthread.c:76
+
+D (268) cpu_start: calling init function: 0x42003200 on core: 0
+--- 0x42003200: __esp_system_init_fn_init_flash at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/startup_funcs.c:88
+
+V (268) memspi: raw_chip_id: 182085
+
+V (269) memspi: chip_id: 852018
+
+V (269) memspi: raw_chip_id: 182085
+
+V (269) memspi: chip_id: 852018
+
+D (269) spi_flash: trying chip: issi
+D (269) spi_flash: trying chip: gd
+D (270) spi_flash: trying chip: mxic
+D (270) spi_flash: trying chip: winbond
+D (270) spi_flash: trying chip: boya
+D (270) spi_flash: trying chip: th
+D (270) spi_flash: trying chip: mxic (opi)
+D (271) spi_flash: trying chip: generic
+I (271) spi_flash: detected chip: generic
+I (271) spi_flash: flash io: dio
+W (271) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+D (272) cpu_start: calling init function: 0x42002da4 on core: 0
+--- 0x42002da4: __esp_system_init_fn_init_efuse at C:/Espressif/frameworks/esp-idf-v5.3.2/components/efuse/src/esp_efuse_startup.c:137
+
+D (273) cpu_start: calling init function: 0x4207cb94
+--- 0x4207cb94: _GLOBAL__sub_I__ZN17__eh_globals_init7_S_initE at /builds/idf/crosstool-NG/.build/HOST-x86_64-w64-mingw32/xtensa-esp-elf/src/gcc/libstdc++-v3/libsupc++/eh_globals.cc:162
+
+D (314) cpu_start: calling init function: 0x42021838
+--- 0x42021838: s_set_default_wifi_log_level at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_wifi/src/wifi_init.c:93
+
+D (314) cpu_start: calling init function: 0x4037d1c4
+--- 0x4037d1c4: enable_timer_group0_for_calibration at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_hw_support/port/esp32s3/rtc_time.c:199
+
+D (315) cpu_start: calling init function: 0x420045d4
+--- 0x420045d4: esp_ipc_init at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/esp_ipc.c:113
+
+D (315) cpu_start: calling init function: 0x4200379c
+--- 0x4200379c: esp_reset_reason_init at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/port/soc/esp32s3/reset_reason.c:63
+
+D (315) cpu_start: calling init function: 0x420558a0 on core: 0
+--- 0x420558a0: __esp_system_init_fn_esp_timer_init_os at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_timer/src/esp_timer.c:587
+
+V (315) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): checking args
+V (316) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): Args okay. Resulting flags 0xC02
+D (316) intr_alloc: Connected src 59 to int 2 (cpu 0)
+D (316) cpu_start: calling init function: 0x42005ef0 on core: 0
+--- 0x42005ef0: __esp_system_init_fn_esp_sleep_startup_init at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_hw_support/sleep_gpio.c:191
+
+I (317) sleep: Configure to isolate all GPIO pins in sleep state
+I (317) sleep: Enable automatic switching of GPIO sleep configuration
+D (317) cpu_start: calling init function: 0x42003228 on core: 0
+--- 0x42003228: __esp_system_init_fn_init_apb_dma at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/startup_funcs.c:125
+
+D (318) cpu_start: calling init function: 0x4200a048 on core: 0
+--- 0x4200a048: __esp_system_init_fn_usb_serial_jtag_conn_status_init at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_driver_usb_serial_jtag/src/usb_serial_jtag_connection_monitor.c:75
+
+D (318) cpu_start: calling init function: 0x42003234 on core: 0
+--- 0x42003234: __esp_system_init_fn_init_disable_rtc_wdt at C:/Espressif/frameworks/esp-idf-v5.3.2/components/esp_system/startup_funcs.c:143
+
+V (319) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): checking args
+V (319) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): Args okay. Resulting flags 0x40E
+D (319) intr_alloc: Connected src 79 to int 3 (cpu 0)
+D (320) app_start: Starting scheduler on CPU0
+V (320) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): checking args
+V (320) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): Args okay. Resulting flags 0x402
+D (320) intr_alloc: Connected src 57 to int 5 (cpu 0)
+V (320) intr_alloc: esp_intr_alloc_intrstatus (cpu 1): checking args
+V (320) intr_alloc: esp_intr_alloc_intrstatus (cpu 1): Args okay. Resulting flags 0x40E
+I (32D (321) intr_alloc: Connected src 80 to int 0 (cpu 1)
+D (321) app_start: Starting scheduler on CPU1
+V (321) intr_alloc: esp_intr_alloc_intrstatus (cpu 1): checking args
+V (322) intr_alloc: esp_intr_alloc_intrstatus (cpu 1): Args okay. Resulting flags 0x402
+0) main_taD (322) intr_alloc: Connected src 58 to int 1 (cpu 1)
+sk: Started on CPU0
+D (323) heap_init: New heap initialised at 0x3fce9710
+V (323) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): checking args
+V (323) intr_alloc: esp_intr_alloc_intrstatus (cpu 0): Args okay. Resulting flags 0xE
+D (324) intr_alloc: Connected src 52 to int 8 (cpu 0)
+I (324) main_task: Calling app_main()
+I (345) pp: pp rom version: e7ae62f
+I (346) net80211: net80211 rom version: e7ae62f
+I (347) wifi:wifi driver task: 3fcaee00, prio:23, stack:6656, core=0
+I (357) wifi:wifi firmware version: b0fd6006b
+I (357) wifi:wifi certification version: v7.0
+I (357) wifi:config NVS flash: enabled
+I (357) wifi:config nano formating: disabled
+I (358) wifi:Init data frame dynamic rx buffer num: 32
+I (358) wifi:Init static rx mgmt buffer num: 5
+I (358) wifi:Init management short buffer num: 32
+I (358) wifi:Init dynamic tx buffer num: 32
+I (358) wifi:Init static tx FG buffer num: 2
+I (359) wifi:Init static rx buffer size: 1600
+I (359) wifi:Init static rx buffer num: 10
+I (359) wifi:Init dynamic rx buffer num: 32
+I (360) wifi_init: rx ba win: 6
+I (360) wifi_init: accept mbox: 6
+I (360) wifi_init: tcpip mbox: 32
+I (360) wifi_init: udp mbox: 6
+I (361) wifi_init: tcp mbox: 6
+I (361) wifi_init: tcp tx win: 5760
+I (361) wifi_init: tcp rx win: 5760
+I (361) wifi_init: tcp mss: 1440
+I (361) wifi_init: WiFi IRAM OP enabled
+I (362) wifi_init: WiFi RX IRAM OP enabled
+I (365) camera wifi: wifi_init_softap finished.SSID:ESP32S3-UVC password:
+W (365) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2
+I (366) camera wifi: wifi_init_sta finished.
+I (367) camera wifi: connect to ap SSID:GL-SFT1200-15b password:sicausicau
+I (367) phy_init: phy_version 680,a6008b2,Jun  4 2024,16:41:10
+I (401) wifi:mode : sta (e8:06:90:9c:0e:8c) + softAP (e8:06:90:9c:0e:8d)
+I (402) wifi:enable tsf
+I (403) wifi:Total power save buffer number: 16
+I (403) wifi:Init max length of beacon: 752/752
+I (404) wifi:Init max length of beacon: 752/752
+I (405) camera_httpd: Starting web server on port: '80'
+I (409) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1
+I (411) USB_STREAM: UVC Streaming Config Succeed, Version: 1.5.0
+I (414) wifi:ap channel adjust o:1,1 n:6,1
+I (415) wifi:new:<6,1>, old:<1,1>, ap:<6,1>, sta:<6,1>, prof:1, snd_ch_cfg:0x0
+I (416) wifi:state: init -> auth (0xb0)
+I (417) USB_STREAM: SPK Streaming Suspend After Start
+I (418) USB_STREAM: UAC Streaming Config Succeed, Version: 1.5.0
+I (418) USB_STREAM: USB streaming callback register succeed
+I (418) USB_STREAM: Pre-alloc ctrl urb succeed, size = 1024
+I (420) USB_STREAM: USB stream task start
+I (449) USB_STREAM: USB Streaming Start Succeed
+I (449) USB_STREAM: Waiting USB Device Connection
+I (480) wifi:state: auth -> assoc (0x0)
+I (524) wifi:state: assoc -> run (0x10)
+I (591) wifi:connected with GL-SFT1200-15b, aid = 2, channel 6, 40U, bssid = 94:83:c4:1c:71:5d
+I (591) wifi:security: WPA2-PSK, phy: bgn, rssi: -55
+I (593) wifi:pm start, type: 1
+
+I (594) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us
+I (594) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000
+I (601) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us
+I (602) wifi:AP's beacon interval = 102400 us, DTIM period = 2
+I (699) USB_STREAM: line 151 HCD_PORT_EVENT_CONNECTION
+I (700) USB_STREAM: Action: ACTION_DEVICE_CONNECT
+I (750) USB_STREAM: Resetting Port
+I (810) USB_STREAM: Setting Port FIFO, 1
+I (811) USB_STREAM: USB Speed: full-speed
+I (811) USB_STREAM: ENUM Stage START, Succeed
+I (812) USB_STREAM: ENUM Stage GET_SHORT_DEV_DESC, Succeed
+I (814) USB_STREAM: Default pipe endpoint MPS update to 64
+I (815) USB_STREAM: ENUM Stage CHECK_SHORT_DEV_DESC, Succeed
+I (816) USB_STREAM: ENUM Stage SET_ADDR, Succeed
+I (828) USB_STREAM: ENUM Stage CHECK_ADDR, Succeed
+I (829) USB_STREAM: ENUM Stage GET_FULL_DEV_DESC, Succeed
+*** Device descriptor ***
+bcdUSB 2.00
+bDeviceClass 0xef
+bDeviceSubClass 0x2
+bDeviceProtocol 0x1
+bMaxPacketSize0 64
+idVendor 0x349c
+idProduct 0x3307
+bNumConfigurations 1
+I (831) USB_STREAM: ENUM Stage CHECK_FULL_DEV_DESC, Succeed
+I (832) USB_STREAM: ENUM Stage GET_SHORT_CONFIG_DESC, Succeed
+I (834) USB_STREAM: ENUM Stage CHECK_SHORT_CONFIG_DESC, Succeed
+I (835) USB_STREAM: ENUM Stage GET_FULL_CONFIG_DESC, Succeed
+*** Configuration descriptor ***
+wTotalLength 522
+bNumInterfaces 5
+bConfigurationValue 1
+*** Interface Association Descriptor: Video ***
+        *** Interface descriptor ***
+        bInterfaceNumber 0
+        bAlternateSetting 0
+        bNumEndpoints 1
+        bInterfaceClass 0xe (Video)
+        bInterfaceSubClass 0x1
+                *** Endpoint descriptor ***
+                bEndpointAddress 0x84   EP 4 IN
+                bmAttributes 0x3        INT
+                wMaxPacketSize 10
+                bInterval 5
+        *** Interface descriptor ***
+        bInterfaceNumber 1
+        bAlternateSetting 0
+        bNumEndpoints 1
+        bInterfaceClass 0xe (Video)
+        bInterfaceSubClass 0x2
+                *** Endpoint descriptor ***
+                bEndpointAddress 0x81   EP 1 IN
+                bmAttributes 0x2        BULK
+                wMaxPacketSize 64
+                bInterval 0
+        *** Class-specific VS Interface Descriptor ***
+        bNumFormats 1
+        *** VS Format MJPEG Descriptor ***
+        bFormatIndex 0x1
+        bNumFrameDescriptors 5
+        bDefaultFrameIndex 1
+        *** VS MJPEG Frame Descriptor ***
+        bFrameIndex 0x1
+        wWidth 1280
+        wHeigh 720
+        FrameInterval[0] 666666
+        FrameInterval[1] 1000000
+        *** VS MJPEG Frame Descriptor ***
+        bFrameIndex 0x2
+        wWidth 800
+        wHeigh 480
+        FrameInterval[0] 500000
+        FrameInterval[1] 666666
+        *** VS MJPEG Frame Descriptor ***
+        bFrameIndex 0x3
+        wWidth 640
+        wHeigh 480
+        FrameInterval[0] 333333
+        FrameInterval[1] 666666
+        *** VS MJPEG Frame Descriptor ***
+        bFrameIndex 0x4
+        wWidth 480
+        wHeigh 320
+        FrameInterval[0] 333333
+        FrameInterval[1] 666666
+        *** VS MJPEG Frame Descriptor ***
+        bFrameIndex 0x5
+        wWidth 320
+        wHeigh 240
+        FrameInterval[0] 333333
+        FrameInterval[1] 666666
+*** Interface Association Descriptor: Audio ***
+        *** Interface descriptor ***
+        bInterfaceNumber 2
+        bAlternateSetting 0
+        bNumEndpoints 0
+        bInterfaceClass 0x1 (Audio)
+        bInterfaceSubClass 0x1
+        *** Audio control header descriptor ***
+        bcdADC 0x100
+        wTotalLength 69
+        bInCollection 2
+                Interface number[0] = 3
+                Interface number[1] = 4
+        *** Audio control input terminal descriptor ***
+        bTerminalID 4
+        wTerminalType 0x201
+        bAssocTerminal 0
+        bNrChannels 1
+        wChannelConfig 0x0001
+        *** Audio control feature unit descriptor ***
+        bUnitID 5
+        bSourceID 4
+        bControlSize 1
+        bmaControls[ch0] 0x3
+        *** Audio control output terminal descriptor ***
+        bTerminalID 6
+        wTerminalType 0x101
+        bAssocTerminal 0
+        *** Audio control input terminal descriptor ***
+        bTerminalID 7
+        wTerminalType 0x101
+        bAssocTerminal 0
+        bNrChannels 1
+        wChannelConfig 0x0001
+        *** Audio control feature unit descriptor ***
+        bUnitID 8
+        bSourceID 7
+        bControlSize 1
+        bmaControls[ch0] 0x1
+        bmaControls[ch1] 0x2
+        *** Audio control output terminal descriptor ***
+        bTerminalID 9
+        wTerminalType 0x301
+        bAssocTerminal 7
+        *** Interface descriptor ***
+        bInterfaceNumber 3
+        bAlternateSetting 0
+        bNumEndpoints 0
+        bInterfaceClass 0x1 (Audio)
+        bInterfaceSubClass 0x2
+        *** Interface descriptor ***
+        bInterfaceNumber 3
+        bAlternateSetting 1
+        bNumEndpoints 1
+        bInterfaceClass 0x1 (Audio)
+        bInterfaceSubClass 0x2
+        *** Audio stream general descriptor ***
+        bTerminalLink 6
+        bDelay 1
+        wFormatTag 1
+        *** Audio control header descriptor ***
+        bFormatType 1
+        bNrChannels 1
+        bSubframeSize 2
+        bBitResolution 16
+        bSamFreqType 1
+        tSamFreq[0] 8000
+                *** Endpoint descriptor ***
+                bEndpointAddress 0x82   EP 2 IN
+                bmAttributes 0xd        ISOC
+                wMaxPacketSize 100
+                bInterval 1
+        *** Interface descriptor ***
+        bInterfaceNumber 4
+        bAlternateSetting 0
+        bNumEndpoints 0
+        bInterfaceClass 0x1 (Audio)
+        bInterfaceSubClass 0x2
+        *** Interface descriptor ***
+        bInterfaceNumber 4
+        bAlternateSetting 1
+        bNumEndpoints 1
+        bInterfaceClass 0x1 (Audio)
+        bInterfaceSubClass 0x2
+        *** Audio stream general descriptor ***
+        bTerminalLink 7
+        bDelay 1
+        wFormatTag 1
+        *** Audio control header descriptor ***
+        bFormatType 1
+        bNrChannels 1
+        bSubframeSize 2
+        bBitResolution 16
+        bSamFreqType 1
+        tSamFreq[0] 8000
+                *** Endpoint descriptor ***
+                bEndpointAddress 0x3    EP 3 OUT
+                bmAttributes 0x9        ISOC
+                wMaxPacketSize 100
+                bInterval 1
+I (856) USB_STREAM: Actual VS Interface(MPS <= 512) found, interface = 1, alt = 0
+I (857) USB_STREAM:     Endpoint(BULK) Addr = 0x81, MPS = 64
+I (857) USB_STREAM: Actual MJPEG format index, format index = 1, contains 5 frames
+I (857) USB_STREAM: Actual Frame: 7, width*height: 65535*65535, frame index = 1
+I (858) USB_STREAM: Audio control interface = 2
+I (858) USB_STREAM: Speaker feature unit = 8
+I (858) USB_STREAM:     Support volume control, ch = 2
+I (859) USB_STREAM:     Support mute control, ch = 1
+I (859) USB_STREAM: Mic feature unit = 5
+I (859) USB_STREAM:     Support volume control, ch = 1
+I (860) USB_STREAM:     Support mute control, ch = 1
+I (860) USB_STREAM: Speaker Interface found, interface = 4
+I (860) USB_STREAM:     Endpoint(ISOC) Addr = 0x3, MPS = 100
+I (861) USB_STREAM:     Speaker frequency control  Support
+I (861) USB_STREAM: Mic Interface found interface = 3
+I (861) USB_STREAM:     Endpoint(ISOC) Addr = 0x82, MPS = 100
+I (862) USB_STREAM:     Mic frequency control  Support
+I (862) USB_STREAM: ENUM Stage CHECK_FULL_CONFIG_DESC, Succeed
+I (863) USB_STREAM: ENUM Stage SET_CONFIG, Succeed
+I (864) uvc_mic_spk_demo: UVC: get frame list size = 5, current = 0
+I (865) uvc_mic_spk_demo:       frame[0] = 1280x720
+I (865) uvc_mic_spk_demo:       frame[1] = 800x480
+I (865) uvc_mic_spk_demo:       frame[2] = 640x480
+I (865) uvc_mic_spk_demo:       frame[3] = 480x320
+I (865) uvc_mic_spk_demo:       frame[4] = 320x240
+I (866) uvc_mic_spk_demo: UAC MIC: get frame list size = 1, current = 0
+I (866) uvc_mic_spk_demo:        [0] ch_num = 1, bit_resolution = 16, samples_frequence = 8000, samples_frequence_min = 0, samples_frequence_max = 0
+I (867) uvc_mic_spk_demo: UAC MIC: use frame[0] ch_num = 1, bit_resolution = 16, samples_frequence = 8000
+I (868) uvc_mic_spk_demo: UAC SPK: get frame list size = 1, current = 0
+I (868) uvc_mic_spk_demo:        [0] ch_num = 1, bit_resolution = 16, samples_frequence = 8000, samples_frequence_min = 0, samples_frequence_max = 0
+I (869) uvc_mic_spk_demo: UAC SPK: use frame[0] ch_num = 1, bit_resolution = 16, samples_frequence = 8000
+I (869) uvc_mic_spk_demo: Device connected
+I (870) USB_STREAM: Probe Format(1), Frame(1) 1280*720, interval(666666)
+I (870) USB_STREAM: Probe payload size = 2048
+bFormatIndex: 1
+bFrameIndex: 1
+dwFrameInterval: 666666
+dwMaxPayloadTransferSize: 3686400
+bInterfaceNumber: 0
+I (919) USB_STREAM: dwMaxPayloadTransferSize set = 2048, probed = 3686400
+I (920) USB_STREAM: Sample processing task start
+I (920) USB_STREAM: Set Device Interface = 3, Alt = 1
+I (930) USB_STREAM: Set frequency endpoint 0x82: (8000) Hz
+I (961) USB_STREAM: USB Device Connected
+I (961) USB_STREAM: Resume SPK streaming
+I (961) USB_STREAM: Set Device Interface = 4, Alt = 1
+I (963) USB_STREAM: Set frequency endpoint 0x03: (8000) Hz
+I (1019) USB_STREAM: Set SPK volume = 80
+I (1074) USB_STREAM: Set MIC volume = 80
+I (1124) uvc_mic_spk_demo: speaker resume
+I (1124) uvc_mic_spk_demo: start to play default sound
+I (1295) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 1, width = 1280, height = 720, length = 36416, ptr = 0
+I (1365) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 2, width = 1280, height = 720, length = 41556, ptr = 0
+W (1426) USB_STREAM: Transfer buffer overflow, got data=56528 B, last=1244 (32 1a...00 00)
+I (1502) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 3, width = 1280, height = 720, length = 26136, ptr = 0
+I (1569) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 4, width = 1280, height = 720, length = 28976, ptr = 0
+I (1597) esp_netif_handlers: sta ip: 192.168.8.180, mask: 255.255.255.0, gw: 192.168.8.1
+I (1597) camera wifi: got ip:192.168.8.180
+I (1636) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 5, width = 1280, height = 720, length = 30464, ptr = 0
+I (1704) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 6, width = 1280, height = 720, length = 34056, ptr = 0
+I (1770) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 7, width = 1280, height = 720, length = 37508, ptr = 0
+I (1837) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 8, width = 1280, height = 720, length = 48844, ptr = 0
+I (1904) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 9, width = 1280, height = 720, length = 50144, ptr = 0
+I (1974) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 10, width = 1280, height = 720, length = 51584, ptr = 0
+I (2040) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 11, width = 1280, height = 720, length = 26872, ptr = 0
+I (2108) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 12, width = 1280, height = 720, length = 30356, ptr = 0
+I (2175) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 13, width = 1280, height = 720, length = 32232, ptr = 0
+I (2241) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 14, width = 1280, height = 720, length = 36984, ptr = 0
+I (2308) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 15, width = 1280, height = 720, length = 41760, ptr = 0
+I (2377) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 16, width = 1280, height = 720, length = 55968, ptr = 0
+I (2445) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 17, width = 1280, height = 720, length = 27392, ptr = 0
+I (2512) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 18, width = 1280, height = 720, length = 30784, ptr = 0
+I (2579) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 19, width = 1280, height = 720, length = 32480, ptr = 0
+I (2645) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 20, width = 1280, height = 720, length = 36944, ptr = 0
+I (2713) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 21, width = 1280, height = 720, length = 41636, ptr = 0
+I (2780) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 22, width = 1280, height = 720, length = 41684, ptr = 0
+I (2847) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 23 width = 1280, height = 720, length = 41796, ptr = 0
+I (2915) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 24, width = 1280, height = 720, length = 41628, ptr = 0
+I (2982) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 25, width = 1280, height = 720, length = 41684, ptr = 0
+I (3049) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 26, width = 1280, height = 720, length = 41700, ptr = 0
+I (3117) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 27, width = 1280, height = 720, length = 41536, ptr = 0
+I (3184) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 28, width = 1280, height = 720, length = 41656, ptr = 0
+I (3251) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 29, width = 1280, height = 720, length = 41764, ptr = 0
+I (3319) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 30, width = 1280, height = 720, length = 41728, ptr = 0
+I (3386) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 31, width = 1280, height = 720, length = 41604, ptr = 0
+I (3454) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 32, width = 1280, height = 720, length = 41592, ptr = 0
+I (3521) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 33, width = 1280, height = 720, length = 41624, ptr = 0
+I (3588) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 34, width = 1280, height = 720, length = 41740, ptr = 0
+I (3656) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 35, width = 1280, height = 720, length = 41736, ptr = 0
+I (3723) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 36, width = 1280, height = 720, length = 41600, ptr = 0
+I (3790) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 37, width = 1280, height = 720, length = 41644, ptr = 0
+I (3858) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 38, width = 1280, height = 720, length = 41676, ptr = 0
+I (3925) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 39, width = 1280, height = 720, length = 41712, ptr = 0
+I (3992) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 40, width = 1280, height = 720, length = 41728, ptr = 0
+I (4060) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 41, width = 1280, height = 720, length = 41688, ptr = 0
+I (4127) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 42, width = 1280, height = 720, length = 41720, ptr = 0
+I (4194) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 43, width = 1280, height = 720, length = 41724, ptr = 0
+I (4262) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 44, width = 1280, height = 720, length = 41756, ptr = 0
+I (4329) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 45, width = 1280, height = 720, length = 41556, ptr = 0
+I (4396) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 46, width = 1280, height = 720, length = 41728, ptr = 0
+I (4464) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 47, width = 1280, height = 720, length = 41660, ptr = 0
+I (4531) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 48, width = 1280, height = 720, length = 41800, ptr = 0
+I (4598) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 49, width = 1280, height = 720, length = 41960, ptr = 0
+I (4666) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 50, width = 1280, height = 720, length = 41872, ptr = 0
+I (4733) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 51, width = 1280, height = 720, length = 41932, ptr = 0
+I (4801) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 52, width = 1280, height = 720, length = 42092, ptr = 0
+I (4868) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 53, width = 1280, height = 720, length = 42056, ptr = 0
+I (4935) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 54, width = 1280, height = 720, length = 42264, ptr = 0
+I (5003) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 55, width = 1280, height = 720, length = 42276, ptr = 0
+I (5070) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 56, width = 1280, height = 720, length = 42428, ptr = 0
+I (5137) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 57, width = 1280, height = 720, length = 42192, ptr = 0
+I (5205) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 58, width = 1280, height = 720, length = 42332, ptr = 0
+I (5272) uvc_mic_spk_demo: uvc callback! frame_format = 7, seq = 59, width = 1280, height = 720, length = 42480, ptr = 0
