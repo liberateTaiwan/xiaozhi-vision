@@ -1,6 +1,11 @@
 ## 此代码为驱动摄像头烧录到板子上的代码，是在乐鑫USB摄像头驱动代码基础上修改后的
 # 主要改进方案：AP网络模式改为STA模型，方便在同一局域网就可以查看视频流
+操作方法：
+1、先用乐鑫官方例程代码跑一遍，他是AP模型的代码，跑得起来，能看到视频流我们再进行改进
+2、使用我的代码，直接进入IDF框架，进入菜单，修改网络为你的wifi和密码，然后idf.py build flash monitor
+3、在monitor里面查找你的板子暴露出的ip，这个ip就是视频流的ip，后续需要你在这个ip抓帧
 
+# 乐鑫官方例程教程：
 ## USB Stream Example
 
 This example demonstrates how to use `usb_stream` component with an ESP device. Example does the following steps:
