@@ -1,13 +1,13 @@
 menu "HTTP Transfer Settings"
     config ESP_WIFI_SSID
         string "WiFi STA SSID"
-        default "GL-SFT1200-15b"
+        default "修改成你的wifi名称"
         help
         WiFi SSID (network name) to connect to or empty for Off.
 
     config ESP_WIFI_PASSWORD
         string "WiFi STA Password"
-        default "sicausicau"
+        default "修改成你的wifi密码"
         help
         WiFi Password if WEP/WPA/WPA2 or empty if Open.
 
