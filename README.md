@@ -1,3 +1,6 @@
+## 此代码为驱动摄像头烧录到板子上的代码，是在乐鑫USB摄像头驱动代码基础上修改后的
+# 主要改进方案：AP网络模式改为STA模型，方便在同一局域网就可以查看视频流
+
 ## USB Stream Example
 
 This example demonstrates how to use `usb_stream` component with an ESP device. Example does the following steps:
