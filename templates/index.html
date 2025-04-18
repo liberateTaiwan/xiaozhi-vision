@@ -1,0 +1,87 @@
+# /opt/xiaozhi/xiaozhi-esp32-wb/templates/index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ESP32 Camera Stream</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        img {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .vision-controls {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 4px;
+        }
+        input[type="text"] {
+            width: 70%;
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 8px 15px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        #vision-result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ESP32 Camera Stream</h1>
+        <img src="/latest_image" alt="ESP32 Camera Stream">
+        <p>Live video stream from ESP32 camera</p>
+        
+        <div class="vision-controls">
+            <input type="text" id="vision-question" placeholder="输入你的问题">
+            <button onclick="analyzeImage()">分析图像</button>
+        </div>
+        <div id="vision-result"></div>
+    </div>
+
+    <script>
+    async function analyzeImage() {
+        const question = document.getElementById('vision-question').value;
+        try {
+            const response = await fetch(`/upload?question=${encodeURIComponent(question)}`, {
+                method: 'POST',
+                body: await fetch('/latest_image').then(r => r.blob())
+            });
+            const data = await response.json();
+            if (data.status === 'success') {
+                document.getElementById('vision-result').textContent = data.analysis;
+            } else {
+                document.getElementById('vision-result').textContent = '分析失败：' + data.message;
+            }
+        } catch (error) {
+            document.getElementById('vision-result').textContent = '错误：' + error;
+        }
+    }
+    </script>
+</body>
+</html>

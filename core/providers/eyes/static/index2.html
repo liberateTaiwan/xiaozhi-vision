@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32视觉语音交互测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .camera-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        #camera-view {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+        }
+        #canvas {
+            display: none;
+        }
+        #microphone-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .button.recording {
+            background-color: #f44336;
+        }
+        .result-container {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .loading {
+            text-align: center;
+            display: none;
+        }
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ESP32视觉语音交互测试</h1>
+        
+        <div class="camera-container">
+            <h2>摄像头</h2>
+            <video id="camera-view" autoplay></video>
+            <canvas id="canvas"></canvas>
+            <button id="capture-button" class="button">拍照</button>
+        </div>
+        
+        <div id="microphone-container">
+            <h2>麦克风</h2>
+            <button id="record-button" class="button">录音</button>
+            <div id="audio-status">未录音</div>
+            <div id="transcription"></div>
+        </div>
+        
+        <div>
+            <h2>提示词</h2>
+            <input type="text" id="prompt-input" placeholder="输入提示词（可选）" style="width: 100%; padding: 8px; box-sizing: border-box;">
+        </div>
+        
+        <button id="process-button" class="button" disabled>发送到服务器处理</button>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>正在处理...</p>
+        </div>
+        
+        <div class="result-container" id="result-container">
+            <h2>处理结果</h2>
+            <div id="text-result"></div>
+            <audio id="audio-result" controls style="display:none; width: 100%; margin-top: 10px;"></audio>
+        </div>
+    </div>
+
+    <script>
+        // 变量声明
+        let capturedImage = null;
+        let audioBlob = null;
+        let mediaRecorder = null;
+        let audioChunks = [];
+        let transcription = "";
+        
+        // DOM元素
+        const cameraView = document.getElementById('camera-view');
+        const canvas = document.getElementById('canvas');
+        const captureButton = document.getElementById('capture-button');
+        const recordButton = document.getElementById('record-button');
+        const audioStatus = document.getElementById('audio-status');
+        const transcriptionElement = document.getElementById('transcription');
+        const promptInput = document.getElementById('prompt-input');
+        const processButton = document.getElementById('process-button');
+        const loadingElement = document.getElementById('loading');
+        const resultContainer = document.getElementById('result-container');
+        const textResult = document.getElementById('text-result');
+        const audioResult = document.getElementById('audio-result');
+        
+        // 启动摄像头
+        async function startCamera() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                cameraView.srcObject = stream;
+            } catch (err) {
+                console.error("启动摄像头失败:", err);
+                alert("无法访问摄像头，请检查权限设置");
+            }
+        }
+        
+        // 拍照
+        captureButton.addEventListener('click', () => {
+            canvas.width = cameraView.videoWidth;
+            canvas.height = cameraView.videoHeight;
+            canvas.getContext('2d').drawImage(cameraView, 0, 0, canvas.width, canvas.height);
+            capturedImage = canvas.toDataURL('image/jpeg').split(',')[1]; // 去除前缀，只保留Base64数据
+            
+            updateProcessButton();
+        });
+        
+        // 录音
+        recordButton.addEventListener('click', async () => {
+            if (mediaRecorder && mediaRecorder.state === 'recording') {
+                // 停止录音
+                mediaRecorder.stop();
+                recordButton.textContent = '录音';
+                recordButton.classList.remove('recording');
+                audioStatus.textContent = '录音已完成';
+            } else {
+                // 开始录音
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                    audioChunks = [];
+                    mediaRecorder = new MediaRecorder(stream);
+                    
+                    mediaRecorder.addEventListener('dataavailable', event => {
+                        audioChunks.push(event.data);
+                    });
+                    
+                    mediaRecorder.addEventListener('stop', () => {
+                        audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                        
+                        // 模拟语音转文字（实际项目中可接入ASR服务）
+                        transcription = "这个画面中有什么？";
+                        transcriptionElement.textContent = `转写结果: ${transcription}`;
+                        promptInput.value = transcription;
+                        
+                        updateProcessButton();
+                    });
+                    
+                    mediaRecorder.start();
+                    recordButton.textContent = '停止录音';
+                    recordButton.classList.add('recording');
+                    audioStatus.textContent = '正在录音...';
+                } catch (err) {
+                    console.error("录音失败:", err);
+                    alert("无法访问麦克风，请检查权限设置");
+                }
+            }
+        });
+        
+        // 更新处理按钮状态
+        function updateProcessButton() {
+            processButton.disabled = !capturedImage;
+        }
+        
+        // 处理图像和音频
+        processButton.addEventListener('click', async () => {
+            if (!capturedImage) {
+                alert("请先拍照");
+                return;
+            }
+            
+            // 显示加载状态
+            loadingElement.style.display = 'block';
+            textResult.textContent = '';
+            audioResult.style.display = 'none';
+            
+            try {
+                const requestData = {
+                    image: capturedImage,
+                    text: promptInput.value || "请描述这个画面中你看到了什么"
+                };
+                
+                // 如果有录音，添加到请求中
+                if (audioBlob) {
+                    // 转换Blob为Base64
+                    const reader = new FileReader();
+                    await new Promise((resolve) => {
+                        reader.onloadend = () => {
+                            requestData.audio = reader.result.split(',')[1]; // 提取Base64部分
+                            resolve();
+                        };
+                        reader.readAsDataURL(audioBlob);
+                    });
+                }
+                
+                // 发送请求
+                const response = await fetch('/vision_process', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(requestData)
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`服务器响应错误: ${response.status}`);
+                }
+                
+                const result = await response.json();
+                
+                // 显示结果
+                textResult.textContent = result.message;
+                
+                // 如果有音频，播放音频
+                if (result.audio_url) {
+                    audioResult.src = result.audio_url;
+                    audioResult.style.display = 'block';
+                    audioResult.play();
+                }
+            } catch (error) {
+                console.error("处理失败:", error);
+                textResult.textContent = `处理失败: ${error.message}`;
+            } finally {
+                loadingElement.style.display = 'none';
+            }
+        });
+        
+        // 初始化
+        startCamera();
+    </script>
+</body>
+</html> 
