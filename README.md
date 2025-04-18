@@ -51,5 +51,6 @@ while True:
 ![image](https://github.com/user-attachments/assets/91fe1c31-dffd-4b45-be9e-d6a439468de9)
 
 3、启动后端服务：python app.py，打印出以下信息说明成功
-![image](https://github.com/user-attachments/assets/91723d11-6d50-4642-84af-696b5d3303da)
+![024945ff56970c9e58232a58c18b5bf](https://github.com/user-attachments/assets/e3afa468-be73-4c00-a709-f57cc18aee3d)
+
 
